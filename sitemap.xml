@@ -2,64 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/demo/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/demo/</loc>
     <lastmod>2018-12-24T12:29:41+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/</loc>
+    <loc>aero-girl.github.io/myBlog/</loc>
     <lastmod>2018-12-24T12:29:41+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/image/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/image/</loc>
     <lastmod>2018-12-24T12:29:41+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/</loc>
     <lastmod>2018-12-24T12:29:41+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/</loc>
     <lastmod>2018-12-24T12:29:41+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/the-figure-shortcode/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/the-figure-shortcode/</loc>
     <lastmod>2018-12-24T12:29:41+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/post-with-featured-image/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/post-with-featured-image/</loc>
     <lastmod>2018-10-01T16:15:09+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/typography/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/typography/</loc>
     <lastmod>2018-09-29T11:36:33+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/typography/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/typography/</loc>
     <lastmod>2018-09-29T11:36:33+08:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/creating-a-new-theme/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/about-hugo/</loc>
+    <loc>aero-girl.github.io/myBlog/about-hugo/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/goisforlovers/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/development/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/hugoisforlovers/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/go/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/go/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/golang/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/hugo/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/templates/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/templates/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/tags/themes/</loc>
+    <loc>aero-girl.github.io/myBlog/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://github.com/aero-girl/aero-girl.github.io.git/posts/migrate-from-jekyll/</loc>
+    <loc>aero-girl.github.io/myBlog/posts/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
 </urlset>
