@@ -60,6 +60,7 @@ a{color:var(--blue);text-underline-offset:3px}
 .mapItem .go{display:block;margin-top:14px;color:#ffd9cf;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
 .card.flash{animation:flash 1.6s ease}
 @keyframes flash{0%{box-shadow:0 0 0 0 rgba(51,75,255,.55),var(--shadow)}40%{box-shadow:0 0 0 6px rgba(51,75,255,.30),var(--shadow)}100%{box-shadow:var(--shadow)}}
+.meta .aiPill{font-weight:900}.meta .aiPill.ai{background:var(--blue);color:#fff;border-color:var(--blue)}.meta .aiPill.found{background:#efe7d8;color:var(--navy)}
 </style>
 </head>
 <body>
@@ -72,7 +73,7 @@ a{color:var(--blue);text-underline-offset:3px}
     </div>
     <aside class="heroPanel">
       <div class="label">Inside the pack</div>
-      <div class="stats"><div class="stat"><div class="num">18</div><div class="label">key announcements</div></div><div class="stat"><div class="num">18</div><div class="label">official images</div></div><div class="stat"><div class="num">100%</div><div class="label">Databricks sources</div></div><div class="stat"><div class="num">3</div><div class="label">comparison cards</div></div></div>
+      <div class="stats"><div class="stat"><div class="num">18</div><div class="label">key announcements</div></div><div class="stat"><div class="num">12</div><div class="label">AI &amp; agents</div></div><div class="stat"><div class="num">6</div><div class="label">foundation</div></div><div class="stat"><div class="num">18</div><div class="label">official images</div></div><div class="stat"><div class="num">100%</div><div class="label">Databricks sources</div></div><div class="stat"><div class="num">3</div><div class="label">comparison cards</div></div></div>
       <div class="actions"><a class="btn primary" href="#cards">Open the cards</a><a class="btn" href="../dais-2026-announcements/">Verified source guide</a></div>
     </aside>
   </section>
@@ -92,12 +93,12 @@ a{color:var(--blue);text-underline-offset:3px}
 
   <section id="cards">
     <div class="sectionHead"><div><div class="kicker">Announcement cards</div><h2>Screenshot-ready summaries.</h2></div></div>
-    <div class="filters"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="Governance">Governance</button><button class="chip" data-filter="Agent">Agents</button><button class="chip" data-filter="Business">Business AI</button><button class="chip" data-filter="data">Data platform</button></div>
+    <div class="filters"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="AI">AI &amp; agents (12)</button><button class="chip" data-filter="Foundation">Foundation (6)</button><button class="chip" data-filter="Governance">Governance</button><button class="chip" data-filter="Agent">Agents</button><button class="chip" data-filter="Business">Business AI</button><button class="chip" data-filter="data">Data platform</button></div>
     <div class="cards">
-    <article class="card" data-confidence="High" data-category="Governance layer" id="a1">
+    <article class="card" data-confidence="High" data-category="Governance layer" data-ai="Foundation" id="a1">
       <div class="shot"><img src="assets/images/unity-catalog.png" alt="Official Databricks blog image for Unity Catalog"></div>
       <div class="cardBody">
-        <div class="meta"><span>01</span><span>Governance layer</span></div>
+        <div class="meta"><span>01</span><span class="aiPill found">Foundation</span><span>Governance layer</span></div>
         <h3>Unity Catalog</h3>
         <p class="what">Unity Catalog is Databricks governance for data, models, agents and tools.</p>
         <div class="split"><div><b>Why followers should care</b><p>It gives teams one place to control access, meaning and audit trails.</p></div><div><b>What changed</b><p>New AI Gateway links, policy updates, better glossary and domain support, external lineage, file support and wider governance links.</p></div></div>
@@ -109,10 +110,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Governance layer" id="a2">
+    <article class="card" data-confidence="Medium" data-category="Governance layer" data-ai="AI" id="a2">
       <div class="shot"><img src="assets/images/unity-ai-gateway.png" alt="Official Databricks blog image for Unity AI Gateway"></div>
       <div class="cardBody">
-        <div class="meta"><span>02</span><span>Governance layer</span></div>
+        <div class="meta"><span>02</span><span class="aiPill ai">AI</span><span>Governance layer</span></div>
         <h3>Unity AI Gateway</h3>
         <p class="what">Unity AI Gateway controls how models, agents and tools run.</p>
         <div class="split"><div><b>Why followers should care</b><p>It helps stop agent sprawl, surprise bills and unsafe tool use.</p></div><div><b>What changed</b><p>Runtime controls for models and agents, spend caps, smart routing, MCP controls and traces.</p></div></div>
@@ -124,10 +125,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="High" data-category="Agent build layer" id="a3">
+    <article class="card" data-confidence="High" data-category="Agent build layer" data-ai="AI" id="a3">
       <div class="shot"><img src="assets/images/agent-bricks.png" alt="Official Databricks blog image for Agent Bricks"></div>
       <div class="cardBody">
-        <div class="meta"><span>03</span><span>Agent build layer</span></div>
+        <div class="meta"><span>03</span><span class="aiPill ai">AI</span><span>Agent build layer</span></div>
         <h3>Agent Bricks</h3>
         <p class="what">Agent Bricks is Databricks platform for building and running AI agents.</p>
         <div class="split"><div><b>Why followers should care</b><p>It turns agent work from scattered experiments into a managed build path.</p></div><div><b>What changed</b><p>More model choice, more context connectors, Lakebase memory, Unity AI Gateway control and agent tracing.</p></div></div>
@@ -139,10 +140,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Business AI layer" id="a4">
+    <article class="card" data-confidence="Medium" data-category="Business AI layer" data-ai="AI" id="a4">
       <div class="shot"><img src="assets/images/genie-one.png" alt="Official Databricks blog image for Genie One"></div>
       <div class="cardBody">
-        <div class="meta"><span>04</span><span>Business AI layer</span></div>
+        <div class="meta"><span>04</span><span class="aiPill ai">AI</span><span>Business AI layer</span></div>
         <h3>Genie One</h3>
         <p class="what">Genie One is an AI coworker for business teams.</p>
         <div class="split"><div><b>Why followers should care</b><p>It lets people ask questions and trigger work without waiting for a SQL expert.</p></div><div><b>What changed</b><p>A business user agent, tool actions, enterprise context and workflow support through Genie Ontology.</p></div></div>
@@ -154,10 +155,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Business AI layer" id="a5">
+    <article class="card" data-confidence="Medium" data-category="Business AI layer" data-ai="AI" id="a5">
       <div class="shot"><img src="assets/images/genie-one.png" alt="Official Databricks blog image for Genie Ontology"></div>
       <div class="cardBody">
-        <div class="meta"><span>05</span><span>Business AI layer</span></div>
+        <div class="meta"><span>05</span><span class="aiPill ai">AI</span><span>Business AI layer</span></div>
         <h3>Genie Ontology</h3>
         <p class="what">Genie Ontology is a living map of business meaning.</p>
         <div class="split"><div><b>Why followers should care</b><p>It helps agents understand which data and definitions to trust.</p></div><div><b>What changed</b><p>A semantic graph built from tables, dashboards, queries, apps, usage and ownership signals.</p></div></div>
@@ -169,10 +170,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Business AI layer" id="a6">
+    <article class="card" data-confidence="Medium" data-category="Business AI layer" data-ai="AI" id="a6">
       <div class="shot"><img src="assets/images/genie-one.png" alt="Official Databricks blog image for Genie Agents"></div>
       <div class="cardBody">
-        <div class="meta"><span>06</span><span>Business AI layer</span></div>
+        <div class="meta"><span>06</span><span class="aiPill ai">AI</span><span>Business AI layer</span></div>
         <h3>Genie Agents</h3>
         <p class="what">Genie Agents are conversational agents for analytics.</p>
         <div class="split"><div><b>Why followers should care</b><p>They let users ask governed data questions in plain English.</p></div><div><b>What changed</b><p>Ontology grounded answers, permission checks and sharable analytics agents.</p></div></div>
@@ -184,10 +185,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Real-time data layer" id="a7">
+    <article class="card" data-confidence="Medium" data-category="Real-time data layer" data-ai="Foundation" id="a7">
       <div class="shot"><img src="assets/images/lakehouse-rt.png" alt="Official Databricks blog image for Lakehouse RT"></div>
       <div class="cardBody">
-        <div class="meta"><span>07</span><span>Real-time data layer</span></div>
+        <div class="meta"><span>07</span><span class="aiPill found">Foundation</span><span>Real-time data layer</span></div>
         <h3>Lakehouse RT</h3>
         <p class="what">Lakehouse RT brings low latency analytics directly to lakehouse data.</p>
         <div class="split"><div><b>Why followers should care</b><p>It helps apps and agents use fresher data without a separate serving store.</p></div><div><b>What changed</b><p>The Reyden engine, direct Delta and Iceberg reads, millisecond query claims and less need for a separate real time serving layer.</p></div></div>
@@ -199,10 +200,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="High" data-category="Operational data layer" id="a8">
+    <article class="card" data-confidence="High" data-category="Operational data layer" data-ai="Foundation" id="a8">
       <div class="shot"><img src="assets/images/ltap-lakebase-and-multi-cloud-disaster-recovery.png" alt="Official Databricks blog image for LTAP, Lakebase and multi cloud disaster recovery"></div>
       <div class="cardBody">
-        <div class="meta"><span>08</span><span>Operational data layer</span></div>
+        <div class="meta"><span>08</span><span class="aiPill found">Foundation</span><span>Operational data layer</span></div>
         <h3>LTAP, Lakebase and multi cloud disaster recovery</h3>
         <p class="what">LTAP gives apps, analytics and agents one governed system of record across transactions and analytics.</p>
         <div class="split"><div><b>Why followers should care</b><p>It cuts the gap between app data and analytics data.</p></div><div><b>What changed</b><p>LTAP, Lakebase as the transactional layer, disaster recovery, branching and snapshots.</p></div></div>
@@ -214,10 +215,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Data engineering layer" id="a9">
+    <article class="card" data-confidence="Medium" data-category="Data engineering layer" data-ai="Foundation" id="a9">
       <div class="shot"><img src="assets/images/lakeflow.png" alt="Official Databricks blog image for Lakeflow"></div>
       <div class="cardBody">
-        <div class="meta"><span>09</span><span>Data engineering layer</span></div>
+        <div class="meta"><span>09</span><span class="aiPill found">Foundation</span><span>Data engineering layer</span></div>
         <h3>Lakeflow</h3>
         <p class="what">Lakeflow is Databricks data engineering platform for ingestion, transform and orchestration.</p>
         <div class="split"><div><b>Why followers should care</b><p>AI needs fresh and reliable data before anything clever matters.</p></div><div><b>What changed</b><p>More connectors, Designer, Genie Code help, Zerobus ingest and Lakeflow Jobs.</p></div></div>
@@ -229,10 +230,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Operations layer" id="a10">
+    <article class="card" data-confidence="Medium" data-category="Operations layer" data-ai="AI" id="a10">
       <div class="shot"><img src="assets/images/genie-zeroops.png" alt="Official Databricks blog image for Genie ZeroOps"></div>
       <div class="cardBody">
-        <div class="meta"><span>10</span><span>Operations layer</span></div>
+        <div class="meta"><span>10</span><span class="aiPill ai">AI</span><span>Operations layer</span></div>
         <h3>Genie ZeroOps</h3>
         <p class="what">Genie ZeroOps watches production data and AI workloads.</p>
         <div class="split"><div><b>Why followers should care</b><p>It helps teams spot issues before humans have to dig through logs.</p></div><div><b>What changed</b><p>Background checks, issue investigation, cloned data testing and suggested fixes.</p></div></div>
@@ -244,10 +245,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Developer layer" id="a11">
+    <article class="card" data-confidence="Medium" data-category="Developer layer" data-ai="AI" id="a11">
       <div class="shot"><img src="assets/images/genie-code.png" alt="Official Databricks blog image for Genie Code"></div>
       <div class="cardBody">
-        <div class="meta"><span>11</span><span>Developer layer</span></div>
+        <div class="meta"><span>11</span><span class="aiPill ai">AI</span><span>Developer layer</span></div>
         <h3>Genie Code</h3>
         <p class="what">Genie Code is a coding agent for data and ML work.</p>
         <div class="split"><div><b>Why followers should care</b><p>It helps with notebooks, pipelines, docs and routine code tasks.</p></div><div><b>What changed</b><p>A full page workspace, MLflow context, endpoint checks, scheduled tasks and GPU runtime switching.</p></div></div>
@@ -259,10 +260,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Developer layer" id="a12">
+    <article class="card" data-confidence="Medium" data-category="Developer layer" data-ai="AI" id="a12">
       <div class="shot"><img src="assets/images/genie-code-and-zeroops-for-ml-and-data-science.png" alt="Official Databricks blog image for Genie Code and ZeroOps for ML and data science"></div>
       <div class="cardBody">
-        <div class="meta"><span>12</span><span>Developer layer</span></div>
+        <div class="meta"><span>12</span><span class="aiPill ai">AI</span><span>Developer layer</span></div>
         <h3>Genie Code and ZeroOps for ML and data science</h3>
         <p class="what">Databricks added agent help for ML engineering, model serving and model operations.</p>
         <div class="split"><div><b>Why followers should care</b><p>Data science teams lose time moving between code, serving, monitoring and fixes.</p></div><div><b>What changed</b><p>Genie Code for ML work, Genie ZeroOps for ML, online feature serving on Lakebase and model serving updates.</p></div></div>
@@ -274,10 +275,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="High" data-category="Distribution layer" id="a13">
+    <article class="card" data-confidence="High" data-category="Distribution layer" data-ai="Foundation" id="a13">
       <div class="shot"><img src="assets/images/apps-on-databricks-marketplace.png" alt="Official Databricks blog image for Apps on Databricks Marketplace"></div>
       <div class="cardBody">
-        <div class="meta"><span>13</span><span>Distribution layer</span></div>
+        <div class="meta"><span>13</span><span class="aiPill found">Foundation</span><span>Distribution layer</span></div>
         <h3>Apps on Databricks Marketplace</h3>
         <p class="what">Marketplace apps run third party tools on governed Databricks data.</p>
         <div class="split"><div><b>Why followers should care</b><p>It is safer than copying data out to every vendor.</p></div><div><b>What changed</b><p>One click install, permission checks, serverless provisioning and app sandboxing.</p></div></div>
@@ -289,10 +290,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="High" data-category="App layer" id="a14">
+    <article class="card" data-confidence="High" data-category="App layer" data-ai="AI" id="a14">
       <div class="shot"><img src="assets/images/genie-app-builder.png" alt="Official Databricks blog image for App Spaces, Genie App Builder and micro app runtime"></div>
       <div class="cardBody">
-        <div class="meta"><span>14</span><span>App layer</span></div>
+        <div class="meta"><span>14</span><span class="aiPill ai">AI</span><span>App layer</span></div>
         <h3>App Spaces, Genie App Builder and micro app runtime</h3>
         <p class="what">Databricks announced three app-building capabilities: App Spaces for governance, Genie App Builder for natural-language app creation, and a lightweight micro app runtime for cheaper scale-to-zero apps.</p>
         <div class="split"><div><b>Why followers should care</b><p>Developers and business teams want small apps quickly, but IT still needs control, cost discipline and safe access to governed data.</p></div><div><b>What changed</b><p>App Spaces for governing groups of apps, Genie App Builder as the data-aware build agent, and a lightweight micro app runtime for cheaper scale-to-zero apps.</p></div></div>
@@ -304,10 +305,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Industry solution layer" id="a15">
+    <article class="card" data-confidence="Medium" data-category="Industry solution layer" data-ai="AI" id="a15">
       <div class="shot"><img src="assets/images/customerlake.png" alt="Official Databricks blog image for CustomerLake"></div>
       <div class="cardBody">
-        <div class="meta"><span>15</span><span>Industry solution layer</span></div>
+        <div class="meta"><span>15</span><span class="aiPill ai">AI</span><span>Industry solution layer</span></div>
         <h3>CustomerLake</h3>
         <p class="what">CustomerLake is Databricks agentic customer data platform.</p>
         <div class="split"><div><b>Why followers should care</b><p>Marketing teams need customer data that agents can use safely.</p></div><div><b>What changed</b><p>CustomerLake, Golden Context, marketing agents and agentic CDP workflows inside Databricks.</p></div></div>
@@ -319,10 +320,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Observability layer" id="a16">
+    <article class="card" data-confidence="Medium" data-category="Observability layer" data-ai="AI" id="a16">
       <div class="shot"><img src="assets/images/lakewatch-and-panther.png" alt="Official Databricks blog image for Lakewatch and Panther"></div>
       <div class="cardBody">
-        <div class="meta"><span>16</span><span>Observability layer</span></div>
+        <div class="meta"><span>16</span><span class="aiPill ai">AI</span><span>Observability layer</span></div>
         <h3>Lakewatch and Panther</h3>
         <p class="what">Lakewatch is Databricks agentic SIEM built on a security lakehouse.</p>
         <div class="split"><div><b>Why followers should care</b><p>Security teams need full history and agent help without SIEM costs getting silly.</p></div><div><b>What changed</b><p>Lakewatch, Panther ecosystem links, security data connectors, AI assisted investigation and open security lakehouse positioning.</p></div></div>
@@ -334,10 +335,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Agent operations layer" id="a17">
+    <article class="card" data-confidence="Medium" data-category="Agent operations layer" data-ai="AI" id="a17">
       <div class="shot"><img src="assets/images/omnigent.png" alt="Official Databricks blog image for Omnigent"></div>
       <div class="cardBody">
-        <div class="meta"><span>17</span><span>Agent operations layer</span></div>
+        <div class="meta"><span>17</span><span class="aiPill ai">AI</span><span>Agent operations layer</span></div>
         <h3>Omnigent</h3>
         <p class="what">Omnigent is an open source harness for working with different agents.</p>
         <div class="split"><div><b>Why followers should care</b><p>Teams already have many agents and need one way to control them.</p></div><div><b>What changed</b><p>A shared harness for composing, controlling and sharing agents with sandbox patterns.</p></div></div>
@@ -349,10 +350,10 @@ a{color:var(--blue);text-underline-offset:3px}
         </ul></details>
       </div>
     </article>
-    <article class="card" data-confidence="Medium" data-category="Governance layer" id="a18">
+    <article class="card" data-confidence="Medium" data-category="Governance layer" data-ai="Foundation" id="a18">
       <div class="shot"><img src="assets/images/platform-security-and-compliance.png" alt="Official Databricks blog image for Platform Security and Compliance"></div>
       <div class="cardBody">
-        <div class="meta"><span>18</span><span>Governance layer</span></div>
+        <div class="meta"><span>18</span><span class="aiPill found">Foundation</span><span>Governance layer</span></div>
         <h3>Platform Security and Compliance</h3>
         <p class="what">Databricks announced security and compliance updates for the platform.</p>
         <div class="split"><div><b>Why followers should care</b><p>Security approval is often the slowest part of AI rollouts.</p></div><div><b>What changed</b><p>Identity, zero trust ingress, private networking and compliance coverage updates.</p></div></div>
@@ -424,7 +425,7 @@ chips.forEach(chip=>chip.addEventListener('click',()=>{
   const f=chip.dataset.filter;
   cards.forEach(card=>{
     const hay=(card.dataset.category+' '+card.dataset.confidence).toLowerCase();
-    card.style.display=(f==='all'||hay.includes(f.toLowerCase()))?'':'none';
+    card.style.display=(f==='all'||(f==='AI'||f==='Foundation'?card.dataset.ai===f:hay.includes(f.toLowerCase())))?'':'none';
   });
 }));
 
