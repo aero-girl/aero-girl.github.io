@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAIS 2026 announcement deck</title>
+  <meta name="description" content="Download the Databricks Data + AI Summit 2026 18-announcement PowerPoint deck." />
+  <style>
+    :root {
+      --navy:#212d5e; --blue:#4b64ff; --cream:#EEEDE4; --red:#aa2923;
+      --paper:#f7f1e7; --ink:#121217; --muted:#625d55; --card:#fffaf2;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:radial-gradient(circle at 80% 10%, rgba(75,100,255,.22), transparent 28%), linear-gradient(135deg, var(--paper), var(--cream)); color:var(--ink); }
+    main { min-height:100vh; display:grid; place-items:center; padding:28px; }
+    .shell { width:min(980px, 100%); }
+    .hero { background:var(--navy); color:white; border-radius:38px; padding:44px; box-shadow:0 30px 90px rgba(33,45,94,.22); position:relative; overflow:hidden; }
+    .hero:after { content:""; position:absolute; right:-120px; top:-120px; width:360px; height:360px; border-radius:50%; background:rgba(75,100,255,.35); }
+    .kicker { letter-spacing:.12em; text-transform:uppercase; color:#ffd9cf; font-weight:800; font-size:12px; }
+    h1 { margin:14px 0 12px; font-size:clamp(40px, 7vw, 78px); line-height:.94; max-width:800px; }
+    .lede { font-size:clamp(18px, 2vw, 24px); line-height:1.35; max-width:760px; color:#f4efe8; margin:0 0 28px; }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; position:relative; z-index:1; }
+    .btn { appearance:none; border:0; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:16px 22px; border-radius:999px; font-weight:850; box-shadow:0 14px 35px rgba(0,0,0,.18); }
+    .btn.primary { background:var(--red); color:white; }
+    .btn.secondary { background:white; color:var(--navy); }
+    .meta { margin-top:18px; color:#d8d3cb; font-size:14px; }
+    .cards { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .card { background:rgba(255,250,242,.92); border:1px solid rgba(33,45,94,.14); border-radius:24px; padding:20px; min-height:130px; }
+    .card b { display:block; color:var(--navy); font-size:18px; margin-bottom:8px; }
+    .card span { color:var(--muted); line-height:1.35; }
+    footer { text-align:center; color:var(--muted); padding:18px; font-size:13px; }
+    @media(max-width:760px) { .hero { padding:30px 22px; border-radius:28px; } .cards { grid-template-columns:1fr; } .btn { width:100%; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="shell">
+      <section class="hero">
+        <div class="kicker">Databricks Data + AI Summit 2026</div>
+        <h1>18 announcements, translated for UK enterprise leaders.</h1>
+        <p class="lede">PowerPoint deck covering what each announcement is, why it matters, what changed, and why a UK enterprise like Sainsbury’s should pay attention.</p>
+        <div class="actions">
+          <a class="btn primary" href="databricks-dais-2026-18-announcements-uk-enterprise-lens.pptx" download>Download PowerPoint</a>
+          <a class="btn secondary" href="../dais-2026-linkedin-pack/">Open the visual web pack</a>
+        </div>
+        <div class="meta">Updated 2026-06-29 · PPTX · 1.7 MB · official Databricks imagery and sources inside.</div>
+      </section>
+      <section class="cards" aria-label="What is inside">
+        <div class="card"><b>One slide per announcement</b><span>18 slides, deliberately concise. Built for quick exec skim, not vendor theatre.</span></div>
+        <div class="card"><b>UK enterprise lens</b><span>Each slide adds the practical “why should Sainsbury’s care?” angle.</span></div>
+        <div class="card"><b>Sources visible</b><span>Each slide includes the official Databricks source URL used.</span></div>
+      </section>
+      <footer>If the download opens in-browser instead of downloading, use Save As / Share → Download.</footer>
+    </div>
+  </main>
+</body>
+</html>
