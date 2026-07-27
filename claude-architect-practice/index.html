@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#201b2c">
+  <meta name="description" content="Original CCAR-F practice questions grounded in Anthropic's public July 2026 blueprint.">
+  <title>Architect’s Desk · CCAR-F Practice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="blueprint" aria-hidden="true"></div>
+  <header class="topbar">
+    <button class="wordmark" id="homeButton" aria-label="Return home">
+      <span class="mark">A</span><span>Architect’s Desk</span>
+    </button>
+    <div class="streak" id="streakPill"><span>◆</span> <strong id="streakValue">0</strong> day streak</div>
+  </header>
+
+  <main id="app" class="shell" aria-live="polite">
+    <section id="homeView" class="view">
+      <div class="hero">
+        <p class="eyebrow">CLAUDE CERTIFIED ARCHITECT · FOUNDATIONS</p>
+        <h1>Think like the<br><em>architect.</em></h1>
+        <p class="lede">Ten focused minutes. Five architectural decisions. Explanations that teach the principle—not just the letter.</p>
+      </div>
+
+      <section class="mission-card">
+        <div class="mission-number" aria-hidden="true">05</div>
+        <div>
+          <p class="kicker">TODAY’S MISSION</p>
+          <h2>Five decisions under pressure</h2>
+          <p>Scenario-led practice across the official CCAR-F domains. Your progress stays on this device.</p>
+        </div>
+        <button class="primary" id="startDaily">Start 10-minute mission <span>→</span></button>
+      </section>
+
+      <div class="dashboard">
+        <section class="progress-card">
+          <div class="section-heading">
+            <div><p class="kicker">READINESS</p><h2>Your architecture map</h2></div>
+            <strong id="overallScore">—</strong>
+          </div>
+          <div id="domainBars" class="domain-bars"></div>
+        </section>
+
+        <section class="side-card">
+          <p class="kicker">FULL DIAGNOSTIC</p>
+          <h2>20 questions · 40 minutes</h2>
+          <p>Take the complete original baseline. Single and multiple-response questions included.</p>
+          <button class="secondary" id="startFull">Open diagnostic <span>↗</span></button>
+        </section>
+      </div>
+
+      <details class="source-note">
+        <summary>Sources & integrity</summary>
+        <p>Questions are original and aligned to Anthropic’s public CCAR-F Exam Guide v1.0 (July 2026), then sharpened with validated practitioner feedback. No leaked or recalled live exam questions.</p>
+        <div class="source-links">
+          <a href="https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification" target="_blank" rel="noreferrer">Official certification page ↗</a>
+          <a href="https://github.com/paullarionov/claude-certified-architect" target="_blank" rel="noreferrer">Community study repository ↗</a>
+        </div>
+      </details>
+    </section>
+
+    <section id="quizView" class="view hidden">
+      <div class="quiz-head">
+        <button class="text-button" id="exitQuiz">← Exit</button>
+        <div class="quiz-meta"><span id="modeLabel">Daily mission</span><strong id="questionCount">1 / 5</strong></div>
+      </div>
+      <div class="progress-track"><div id="quizProgress"></div></div>
+
+      <article class="question-sheet">
+        <div class="question-topline">
+          <span id="scenarioBadge">Scenario A</span>
+          <span id="domainBadge">Agentic Architecture</span>
+        </div>
+        <p class="scenario-title" id="scenarioTitle"></p>
+        <h1 id="questionTitle"></h1>
+        <p class="question-copy" id="questionPrompt"></p>
+        <p class="selection-rule" id="selectionRule">Select one answer</p>
+        <div id="options" class="options"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <button class="primary check-button" id="checkAnswer" disabled>Check decision</button>
+        <button class="primary check-button hidden" id="nextQuestion">Next decision <span>→</span></button>
+      </article>
+    </section>
+
+    <section id="resultsView" class="view hidden">
+      <div class="result-hero">
+        <p class="eyebrow">MISSION COMPLETE</p>
+        <div class="score-ring"><strong id="resultScore">0%</strong><span id="resultFraction">0 / 5</span></div>
+        <h1 id="resultHeadline">Blueprint updated.</h1>
+        <p id="resultMessage"></p>
+      </div>
+      <section class="result-card">
+        <p class="kicker">DOMAIN READOUT</p>
+        <div id="resultDomains" class="domain-bars"></div>
+      </section>
+      <div class="result-actions">
+        <button class="primary" id="backHome">Back to desk</button>
+        <button class="secondary" id="retryMissed">Retry missed questions</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Built for practice, not prediction. Official Anthropic material wins where sources differ.</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

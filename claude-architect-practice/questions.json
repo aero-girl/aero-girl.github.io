@@ -1,0 +1,385 @@
+[
+  {
+    "id": 1,
+    "scenario": "A",
+    "scenarioTitle": "Returns resolution agent",
+    "title": "Agent loop termination",
+    "select": 1,
+    "prompt": "After Claude requests `lookup_order`, the application executes the tool. What should it do next?",
+    "options": {
+      "A": "End the loop because a tool has already produced the requested data",
+      "B": "Append the tool result to conversation history and call Claude again",
+      "C": "Search Claude's text for words such as “complete” before deciding",
+      "D": "Start a new conversation containing only the tool result"
+    },
+    "answer": [
+      "B"
+    ],
+    "domain": "Agentic Architecture & Orchestration",
+    "explanation": "`tool_use` means the application should execute the requested tool, append its result to the conversation, and let Claude decide the next action. Finish on `end_turn`, not after the first tool call and not by parsing prose."
+  },
+  {
+    "id": 2,
+    "scenario": "A",
+    "scenarioTitle": "Returns resolution agent",
+    "title": "Mandatory identity verification",
+    "select": 1,
+    "prompt": "Production logs show that refunds occasionally occur before identity verification, despite strong prompt instructions and examples. What is the most reliable correction?",
+    "options": {
+      "A": "Add more verification examples to the prompt",
+      "B": "Ask Claude to state its confidence before refunding",
+      "C": "Programmatically block refund calls until verified customer data exists",
+      "D": "Cap the agent loop at five iterations"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Agentic Architecture & Orchestration",
+    "explanation": "Identity verification before a financial action is a deterministic business requirement. Enforce it programmatically. Prompts and examples reduce failures but do not eliminate them."
+  },
+  {
+    "id": 3,
+    "scenario": "A",
+    "scenarioTitle": "Returns resolution agent",
+    "title": "Multi-concern request",
+    "select": 1,
+    "prompt": "A customer asks about two unrelated orders and also requests a human because the published policy does not cover one unusual item. What should the coordinator do?",
+    "options": {
+      "A": "Process every concern autonomously because the tools are available",
+      "B": "Investigate both orders sequentially and escalate only if a tool fails",
+      "C": "Decompose the concerns, gather relevant facts in parallel, and create a structured human handoff for the policy gap",
+      "D": "Escalate without gathering any information because one concern is ambiguous"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Agentic Architecture & Orchestration",
+    "explanation": "The system should preserve progress on solvable concerns while escalating the policy gap. Parallel investigation reduces latency, and a structured handoff gives the human the facts and recommended next actions."
+  },
+  {
+    "id": 4,
+    "scenario": "A",
+    "scenarioTitle": "Returns resolution agent",
+    "title": "Subagent context",
+    "select": 1,
+    "prompt": "A synthesis subagent produces unsupported conclusions even though the search subagent found strong evidence. Logs show the coordinator told synthesis only, “write the final report”. What is the root cause?",
+    "options": {
+      "A": "Synthesis needs every search tool as well",
+      "B": "Subagents do not automatically inherit the coordinator's or other subagents' context",
+      "C": "The system needs a larger model",
+      "D": "Search and synthesis must always run in the same agent"
+    },
+    "answer": [
+      "B"
+    ],
+    "domain": "Agentic Architecture & Orchestration",
+    "explanation": "Subagents have isolated contexts. The coordinator must explicitly pass search findings, evidence and attribution into the synthesis task."
+  },
+  {
+    "id": 5,
+    "scenario": "A",
+    "scenarioTitle": "Returns resolution agent",
+    "title": "Parallel research",
+    "select": 1,
+    "prompt": "Three independent source categories must be searched. Which coordinator behaviour gives true parallelism?",
+    "options": {
+      "A": "Emit all three `Task` tool calls in one coordinator response",
+      "B": "Emit one `Task` call, wait for it, then emit the next",
+      "C": "Give the coordinator Bash access and start background shell jobs",
+      "D": "Use three named resumed sessions"
+    },
+    "answer": [
+      "A"
+    ],
+    "domain": "Agentic Architecture & Orchestration",
+    "explanation": "Multiple `Task` calls emitted in one coordinator response can execute concurrently. Separate turns serialize the work."
+  },
+  {
+    "id": 6,
+    "scenario": "B",
+    "scenarioTitle": "Tools and MCP",
+    "title": "Wrong tool selection",
+    "select": 1,
+    "prompt": "Claude repeatedly confuses `find_customer` and `find_order`. Both descriptions are one sentence and both accept a string identifier. What is the best first action?",
+    "options": {
+      "A": "Add a keyword router in front of Claude",
+      "B": "Expand both descriptions with accepted inputs, examples, boundaries and when to use one rather than the other",
+      "C": "Force `find_customer` on every request",
+      "D": "Combine every backend operation into one general-purpose tool"
+    },
+    "answer": [
+      "B"
+    ],
+    "domain": "Tool Design & MCP Integration",
+    "explanation": "Descriptions are Claude's primary tool-selection signal. Clarify purpose, input formats, examples and boundaries before adding a routing layer or merging distinct operations."
+  },
+  {
+    "id": 7,
+    "scenario": "B",
+    "scenarioTitle": "Tools and MCP",
+    "title": "Actionable MCP errors",
+    "select": 2,
+    "prompt": "Which two responses best help an agent recover intelligently?",
+    "options": {
+      "A": "`{ \"isError\": true, \"errorCategory\": \"transient\", \"isRetryable\": true, \"message\": \"CRM timed out\" }`",
+      "B": "`{ \"result\": [] }` after a timeout, reported as success",
+      "C": "`{ \"isError\": true, \"errorCategory\": \"permission\", \"isRetryable\": false, \"message\": \"User lacks refund permission\" }`",
+      "D": "`{ \"error\": \"Operation failed\" }` for every failure type"
+    },
+    "answer": [
+      "A",
+      "C"
+    ],
+    "domain": "Tool Design & MCP Integration",
+    "explanation": "Both identify the failure category, whether retry is sensible, and a usable explanation. Empty success silently hides a timeout; a generic error prevents intelligent recovery."
+  },
+  {
+    "id": 8,
+    "scenario": "B",
+    "scenarioTitle": "Tools and MCP",
+    "title": "Tool overload",
+    "select": 1,
+    "prompt": "A document-analysis subagent has 18 tools, including deployment, web publishing, CRM and financial tools it never needs. Selection accuracy has fallen. What should change?",
+    "options": {
+      "A": "Increase the number of few-shot examples while retaining all tools",
+      "B": "Restrict it to the four or five tools required for document analysis",
+      "C": "Force one general tool on every turn",
+      "D": "Move all tool descriptions into the user prompt"
+    },
+    "answer": [
+      "B"
+    ],
+    "domain": "Tool Design & MCP Integration",
+    "explanation": "Least privilege improves tool choice and safety. Agents should receive only the tools required for their role, with narrowly scoped exceptions for frequent cross-role needs."
+  },
+  {
+    "id": 9,
+    "scenario": "B",
+    "scenarioTitle": "Tools and MCP",
+    "title": "Shared MCP configuration",
+    "select": 1,
+    "prompt": "A GitHub MCP server must be available to every developer who clones the project, while keeping its token out of source control. Which setup is correct?",
+    "options": {
+      "A": "Put the server and literal token in `CLAUDE.md`",
+      "B": "Put the server in each user's `~/.claude.json`",
+      "C": "Put the server in project `.mcp.json` and reference an environment variable for the token",
+      "D": "Put the server in `.claude/commands/` and prompt for the token each time"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Tool Design & MCP Integration",
+    "explanation": "Project `.mcp.json` is shared through version control. Environment-variable expansion keeps credentials out of the repository. User-level configuration is personal, not team-wide."
+  },
+  {
+    "id": 10,
+    "scenario": "C",
+    "scenarioTitle": "Team use of Claude Code",
+    "title": "Shared command",
+    "select": 1,
+    "prompt": "The team wants `/security-review` to be version-controlled and available to every developer. Where should its command file live?",
+    "options": {
+      "A": "`~/.claude/commands/`",
+      "B": "`.claude/commands/` in the repository",
+      "C": "`.claude/rules/`",
+      "D": "`.mcp.json`"
+    },
+    "answer": [
+      "B"
+    ],
+    "domain": "Claude Code Configuration & Workflows",
+    "explanation": "Repository `.claude/commands/` is project-scoped and shared. `~/.claude/commands/` is personal."
+  },
+  {
+    "id": 11,
+    "scenario": "C",
+    "scenarioTitle": "Team use of Claude Code",
+    "title": "Conditional conventions",
+    "select": 1,
+    "prompt": "All `*.test.tsx` files must follow one convention even though tests sit in many directories. What is the most maintainable configuration?",
+    "options": {
+      "A": "A user-level `CLAUDE.md`",
+      "B": "One skill developers must remember to invoke",
+      "C": "A `.claude/rules/` file with a `**/*.test.tsx` path glob",
+      "D": "Duplicate `CLAUDE.md` files beside every test"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Claude Code Configuration & Workflows",
+    "explanation": "Path-scoped rules apply automatically to matching files regardless of directory. They avoid duplication and do not depend on a developer remembering to invoke a skill."
+  },
+  {
+    "id": 12,
+    "scenario": "C",
+    "scenarioTitle": "Team use of Claude Code",
+    "title": "Plan or execute",
+    "select": 1,
+    "prompt": "Which task is the clearest candidate for direct execution rather than plan mode?",
+    "options": {
+      "A": "Split a monolith into five services",
+      "B": "Migrate an authentication library across 48 files",
+      "C": "Choose between two event-driven architectures",
+      "D": "Add a missing null check to one function with a clear failing test"
+    },
+    "answer": [
+      "D"
+    ],
+    "domain": "Claude Code Configuration & Workflows",
+    "explanation": "A known, single-file fix with a failing test is appropriately bounded for direct execution. The other tasks involve architecture, broad dependencies or many files and should begin in plan mode."
+  },
+  {
+    "id": 13,
+    "scenario": "C",
+    "scenarioTitle": "Team use of Claude Code",
+    "title": "Claude Code in CI",
+    "select": 2,
+    "prompt": "Which two options are appropriate for a non-interactive pipeline that posts machine-readable review findings?",
+    "options": {
+      "A": "Run Claude Code with `-p` or `--print`",
+      "B": "Set the undocumented environment variable `CLAUDE_HEADLESS=true`",
+      "C": "Use `--output-format json` with `--json-schema`",
+      "D": "Resume the same session that generated the code so it remembers its reasoning"
+    },
+    "answer": [
+      "A",
+      "C"
+    ],
+    "domain": "Claude Code Configuration & Workflows",
+    "explanation": "`-p`/`--print` prevents the command waiting for interactive input. JSON output plus a schema makes results machine-readable. The generator's session should not review its own work; use an independent instance."
+  },
+  {
+    "id": 14,
+    "scenario": "D",
+    "scenarioTitle": "Extraction and review",
+    "title": "False positives",
+    "select": 1,
+    "prompt": "A review agent flags harmless comments as defects. “Be conservative” and “report only high-confidence findings” have not helped. What should you try first?",
+    "options": {
+      "A": "Add explicit categorical criteria showing what constitutes a contradiction and what should be ignored",
+      "B": "Increase the context window",
+      "C": "Trust the agent's self-reported confidence",
+      "D": "Run the same prompt three times and keep majority findings"
+    },
+    "answer": [
+      "A"
+    ],
+    "domain": "Prompt Engineering & Structured Output",
+    "explanation": "Concrete reporting and exclusion criteria improve precision. Vague confidence language is poorly calibrated and does not define the actual decision boundary."
+  },
+  {
+    "id": 15,
+    "scenario": "D",
+    "scenarioTitle": "Extraction and review",
+    "title": "Guaranteed JSON shape",
+    "select": 1,
+    "prompt": "A downstream service must always receive syntactically schema-compliant output. Which method is most reliable?",
+    "options": {
+      "A": "Ask Claude to return JSON in a fenced code block",
+      "B": "Provide one JSON example and parse the text",
+      "C": "Define a tool with the required JSON schema and force that tool selection",
+      "D": "Retry any malformed text without telling Claude what failed"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Prompt Engineering & Structured Output",
+    "explanation": "Tool use with a JSON schema is the most reliable way to guarantee syntactically compliant structure. It does not guarantee semantic correctness, so validation is still required."
+  },
+  {
+    "id": 16,
+    "scenario": "D",
+    "scenarioTitle": "Extraction and review",
+    "title": "Missing source fields",
+    "select": 1,
+    "prompt": "Some invoices legitimately omit a purchase-order number. The current schema requires one, and the model sometimes invents it. What should change?",
+    "options": {
+      "A": "Add “do not hallucinate” to the prompt but retain the required field",
+      "B": "Make the field optional or nullable and validate downstream rules separately",
+      "C": "Replace the schema with free text",
+      "D": "Retry until two runs agree"
+    },
+    "answer": [
+      "B"
+    ],
+    "domain": "Prompt Engineering & Structured Output",
+    "explanation": "If information may be absent, the schema must represent absence. Making a field mandatory pressures the model to fabricate. Business constraints belong in separate validation."
+  },
+  {
+    "id": 17,
+    "scenario": "D",
+    "scenarioTitle": "Extraction and review",
+    "title": "Batch processing",
+    "select": 1,
+    "prompt": "Which workload is the best fit for the Message Batches API?",
+    "options": {
+      "A": "A blocking security check required before every merge",
+      "B": "An interactive customer-support conversation",
+      "C": "An overnight audit of 20,000 archived documents needed the following afternoon",
+      "D": "An agent loop that must call a tool and return its result several times in one request"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Prompt Engineering & Structured Output",
+    "explanation": "Batch processing offers cost savings but may take up to 24 hours and has no latency guarantee. That is suitable for a large, non-blocking overnight audit—not interactive or blocking work, and not a multi-turn tool loop inside one batch request."
+  },
+  {
+    "id": 18,
+    "scenario": "E",
+    "scenarioTitle": "Context and reliability",
+    "title": "Long support conversations",
+    "select": 2,
+    "prompt": "A 40-turn case contains exact refund amounts and order IDs, while MCP tools return dozens of irrelevant fields. Which two changes best preserve reliability?",
+    "options": {
+      "A": "Maintain a structured case-facts block with exact IDs, amounts, dates and statuses",
+      "B": "Keep every raw tool response in full because more context is always safer",
+      "C": "Trim tool results to fields relevant to the case before appending them",
+      "D": "Repeatedly summarise the whole conversation into a single paragraph"
+    },
+    "answer": [
+      "A",
+      "C"
+    ],
+    "domain": "Context Management & Reliability",
+    "explanation": "Preserve exact transactional facts outside lossy summaries, and stop irrelevant tool fields consuming context. More raw context is not automatically better."
+  },
+  {
+    "id": 19,
+    "scenario": "E",
+    "scenarioTitle": "Context and reliability",
+    "title": "Escalation",
+    "select": 1,
+    "prompt": "A customer explicitly says, “I want to speak to a human now.” The issue itself appears straightforward. What should the agent do?",
+    "options": {
+      "A": "Try to solve it first because escalation is expensive",
+      "B": "Ask the customer to rate their frustration",
+      "C": "Honour the explicit request and escalate immediately with a useful handoff",
+      "D": "Use a self-confidence threshold to decide"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Context Management & Reliability",
+    "explanation": "An explicit request for a human is itself an escalation trigger. The agent should honour it and provide a structured handoff rather than using sentiment or model confidence."
+  },
+  {
+    "id": 20,
+    "scenario": "E",
+    "scenarioTitle": "Context and reliability",
+    "title": "Conflicting sources",
+    "select": 1,
+    "prompt": "Two credible reports give different market-size figures and were collected in different years. What should the synthesis pipeline do?",
+    "options": {
+      "A": "Select the newer figure and omit the older one",
+      "B": "Average the figures",
+      "C": "Preserve both values with source attribution, dates and methodological context, and mark the disagreement",
+      "D": "Ask the model which figure feels more plausible"
+    },
+    "answer": [
+      "C"
+    ],
+    "domain": "Context Management & Reliability",
+    "explanation": "Credible conflicts should remain visible. Dates and methods may explain the difference. Preserve claim-source mappings and let readers understand what is established versus contested."
+  }
+]
